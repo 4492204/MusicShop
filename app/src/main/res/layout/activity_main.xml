@@ -23,7 +23,7 @@
 
         <ImageView
             android:scaleType="centerCrop"
-            android:src="@drawable/imageSaleThirty"
+            android:src="@drawable/shop"
             android:layout_width="match_parent"
             android:layout_height="100dp"/>
 
