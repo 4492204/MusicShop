@@ -85,13 +85,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ImageView goodsImageView = findViewById(R.id.goodsImageView);
 
-        if(goodsName.equals("guitar")) {
-            goodsImageView.setImageResource(R.drawable.guitar);
-        } else if (goodsName.equals("piano"))  {
-            goodsImageView.setImageResource(R.drawable.piano);
-        } else if  (goodsName.equals("drums")) {
-            goodsImageView.setImageResource(R.drawable.drums);
-
+        switch (goodsName) {
+            case "guitar":
+                goodsImageView.setImageResource(R.drawable.guitar);
+                break;
+            case "piano":
+                goodsImageView.setImageResource(R.drawable.piano);
+                break;
+            case "drums":
+                goodsImageView.setImageResource(R.drawable.drums);
+                break;
+            default:
+                goodsImageView.setImageResource(R.drawable.guitar);
+                break;
         }
     }
 
