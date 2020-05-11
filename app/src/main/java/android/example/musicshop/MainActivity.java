@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -81,6 +82,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         price = ( double ) goodsMap.get(goodsName);
         TextView priceTextView = findViewById(R.id.priceTextView);
         priceTextView.setText("" + quantity * price);
+
+        ImageView goodsImageView = findViewById(R.id.goodsImageView);
+
+        if(goodsName.equals("guitar")) {
+            goodsImageView.setImageResource(R.drawable.guitar);
+        } else if (goodsName.equals("piano"))  {
+            goodsImageView.setImageResource(R.drawable.piano);
+        } else if  (goodsName.equals("drums")) {
+            goodsImageView.setImageResource(R.drawable.drums);
+
+        }
     }
 
     @Override
