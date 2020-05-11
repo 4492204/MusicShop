@@ -2,6 +2,7 @@ package android.example.musicshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -128,5 +129,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         order.quantity = quantity;
 
         order.orderPrice = quantity * price;
+
+        Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class);
+        orderIntent.putExtra("userName", order.userName);
+        orderIntent.putExtra("goodsName", order.goodsName);
+        orderIntent.putExtra("quantity", order.quantity);
+        orderIntent.putExtra("orderPrice", order.orderPrice);
+
+        startActivity(orderIntent);
     }
 }
