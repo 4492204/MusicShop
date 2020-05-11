@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        createSpinner();
+        createMap();
+    }
+
+    void createSpinner() {
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
         spinnerArrayList = new ArrayList();
@@ -46,13 +51,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(spinnerAdapter);
 
+    }
+
+    void createMap(){
         //передаем в HashMap товары и цены
         goodsMap = new HashMap();
         goodsMap.put("guitar", 500.0);
         goodsMap.put("piano", 1000.0);
         goodsMap.put("drums", 1400.0);
-
-
     }
 
 
